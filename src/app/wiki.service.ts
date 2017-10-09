@@ -10,13 +10,16 @@ export class WikiService {
   constructor(private jsonp: Jsonp) { }
 
   search(query: string) {
-    const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&callback=JSON_CALLBACK&format=json&generator=links&list=search&srsearch=${query}&utf8=1`;
+    const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&generator=links&list=search&srsearch=${query}&utf8=1`;
 
     return this.jsonp.request(apiUrl)
         .map(res => {
-          return res.json().results.map(item => {
-            // return new SearchItem(item.
-            // );
+          return res.json().query.search.map(item => {
+            return new SearchItem(
+              item.title,
+              item.wordcount,
+              item.snippet
+            );
           });
         });
   }

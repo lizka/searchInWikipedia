@@ -20,10 +20,11 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.searchInput = new FormControl();
     this.results = this.searchInput.valueChanges
+        .debounceTime(400)
+        .distinctUntilChanged()
         .do(_ => this.loading = true)
         .switchMap(query => this.wikiService.search(query))
         .do(_ => this.loading = false);
-    this.results.subscribe(x => console.log(x));
   }
 
 }

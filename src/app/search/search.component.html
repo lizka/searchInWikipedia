@@ -12,6 +12,6 @@
     <li class="list-group-item" *ngFor="let item of results | async">
         <p>{{item.name}}</p>
         <span>Words: {{item.words}}</span>
-        <a target="_blank" href="{{item.link}}">Open</a>
+        <!-- <p ng-bind-html="{{item.link}}"></p> -->
     </li>
 </ul>
