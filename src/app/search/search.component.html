@@ -1,11 +1,11 @@
 <input type="search" class="form-control display-1" placeholder="Enter a query" [formControl]="searchInput">
 
-<div class="text-center display-3 p-3">
+<div class="text-center display-3 m-3">
     <p class="lead" *ngIf="loading">Loading...</p>
 </div>
 
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of results | async">
+    <li class="list-group-item" *ngFor="let item of results$ | async">
         <h1 class="display-4">{{item.title}}</h1>
         <span>Words: {{item.words}}</span>
         <span> - </span>
