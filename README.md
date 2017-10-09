@@ -1,1 +1,2 @@
-# searchWikiService
+# Run
+npm install & ng serve - o
