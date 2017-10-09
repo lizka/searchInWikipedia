@@ -1,7 +1,7 @@
-<input type="search" class="form-control w-100 p-3 display-4" placeholder="Enter a query" [formControl]="searchInput">
+<input type="search" class="form-control display-1" placeholder="Enter a query" [formControl]="searchInput">
 
-<div class="text-center display-4">
-    <p *ngIf="loading">Loading...</p>
+<div class="text-center display-3 p-3">
+    <p class="lead" *ngIf="loading">Loading...</p>
 </div>
 
 <ul class="list-group">

@@ -3,10 +3,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 body {
     background-color: lightgray;
-    margin: 20px;
-}
-
-form {
+    margin: 4rem;
+    color: darkslategray;
     display: flex;
     flex-direction: row;
     justify-content: center;
