@@ -1,17 +1,14 @@
-<form class="form-inline">
-    <div class="form-group">
-        <input type="search" class="form-control" placeholder="Enter a query" [formControl]="searchInput">
-    </div>
-</form>
+<input type="search" class="form-control w-100 p-3 display-4" placeholder="Enter a query" [formControl]="searchInput">
 
-<div class="text-center">
+<div class="text-center display-4">
     <p *ngIf="loading">Loading...</p>
 </div>
 
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let item of results | async">
-        <p>{{item.name}}</p>
+        <h1 class="display-4">{{item.title}}</h1>
         <span>Words: {{item.words}}</span>
-        <!-- <p ng-bind-html="{{item.link}}"></p> -->
+        <span> - </span>
+        <a target="_blank" href="https://en.wikipedia.org/wiki/{{item.title}}">Open</a>
     </li>
 </ul>

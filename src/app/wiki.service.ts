@@ -17,8 +17,7 @@ export class WikiService {
           return res.json().query.search.map(item => {
             return new SearchItem(
               item.title,
-              item.wordcount,
-              item.snippet
+              item.wordcount
             );
           });
         });
